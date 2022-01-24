@@ -24,7 +24,18 @@
 * Don't change this                     = "You can change this part";
 * For support email contact@tecdiary.com Thank you!
 */
+$lang['sales_person'] = "អ្នកលក់";
+$lang['rate'] = "អត្រា";
+$lang['sale_no_ref'] = "លេខ";
+$lang['table'] = "អតិថិជន";
+$lang['table'] = "អតិថិជន";
+$lang['price_groups']                           = "ប្រភេទតំលៃ";
+$lang['price_group']                           = "ប្រភេទតំលៃ";
+$lang['expense_categories']                           = "ប្រភេទចំណាយ";
 
+$lang['brand']                           = "ប្រេន";
+$lang['expenses_report']                           = "របាយការណ៏ចំណាយ";
+$lang['monthly_purchases']                           = "របាយការណ៏ទិញចូលប្រចាំខែ";
 $lang['bcf1']                           = "Biller Custom Field 1";
 $lang['bcf2']                           = "Biller Custom Field 2";
 $lang['bcf3']                           = "Biller Custom Field 3";
@@ -149,7 +160,7 @@ $lang['import_products']                    = "ផលិតផលនាំចូ
 $lang['update_price']                       = "កែប្រែតម្លៃ";
 $lang['damage_products']                    = "ផលិតផលខូច";
 $lang['sales']                              = "លក់";
-$lang['list_sales']                         = "បញ្ជីលក់";
+$lang['list_sales']                         = "បញ្ជីលក់ដំុ";
 $lang['add_sale']                           = "បន្ថែមការលក់";
 $lang['deliveries']                         = "ចែកចាយ";
 $lang['gift_cards']                         = "កាត";
@@ -328,7 +339,7 @@ $lang['code']                               = "លេខកូដ";
 $lang['tax']                                = "ពន្ធ";
 $lang['unit_price']                         = "តំលៃក្នុងមួយឯកតា";
 $lang['discount']                           = "បញ្ចុះតំលៃ";
-$lang['order_discount']                     = "Disc Amount";
+$lang['order_discount']                     = "បញ្ចុះតំលៃ";
 $lang['total_amount']                       = "ទឹកប្រាក់សរុប";
 $lang['download_excel']                     = "ទាញយកជា File Excel";
 $lang['subject']                            = "ប្រធានបទ";
@@ -391,7 +402,7 @@ $lang['update_at']                          = "កែប្រែនៅ";
 $lang['error_404']                          = "រកមិនឃើញទំព័រ 404 ";
 $lang['default_customer_group']             = "ក្រុមអតិថិជនដើម";
 $lang['pos_settings']                       = "កំណត់ការលក់";
-$lang['pos_sales']                          = "POS Sales";
+$lang['pos_sales']                          = "បញ្ជីរាយ";
 $lang['seller']                             = "អ្នកលក់";
 $lang['ip:']                                = "IP:";
 $lang['sp_tax']                             = "ពន្ធផលិតផលដែលបានលក់";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2022 at 10:53 AM
+-- Generation Time: Jan 24, 2022 at 11:22 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hotel_restaurant_pos`
+-- Database: `anakut_pos`
 --
 
 -- --------------------------------------------------------
@@ -65,9 +65,7 @@ CREATE TABLE `sma_adjustments` (
 --
 
 INSERT INTO `sma_adjustments` (`id`, `date`, `reference_no`, `warehouse_id`, `note`, `attachment`, `created_by`, `updated_by`, `updated_at`, `count_id`) VALUES
-(1, '2021-08-18 08:12:00', '2021/08/0001', 1, '', NULL, 1, NULL, NULL, NULL),
-(2, '2021-08-26 06:44:00', '2021/08/0002', 1, '', NULL, 1, NULL, NULL, NULL),
-(3, '2021-09-14 01:54:00', '2021/09/0003', 1, '', NULL, 1, NULL, NULL, NULL);
+(4, '2022-01-24 10:19:00', '0004', 1, '', NULL, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,9 +89,7 @@ CREATE TABLE `sma_adjustment_items` (
 --
 
 INSERT INTO `sma_adjustment_items` (`id`, `adjustment_id`, `product_id`, `option_id`, `quantity`, `warehouse_id`, `serial_no`, `type`) VALUES
-(1, 1, 1, NULL, '100.0000', 1, '', 'addition'),
-(2, 2, 4, NULL, '100.0000', 1, '', 'addition'),
-(3, 3, 5, NULL, '100.0000', 1, '', 'addition');
+(4, 4, 6, NULL, '100.0000', 1, '', 'addition');
 
 -- --------------------------------------------------------
 
@@ -177,13 +173,6 @@ CREATE TABLE `sma_combo_items` (
   `unit_price` decimal(25,4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sma_combo_items`
---
-
-INSERT INTO `sma_combo_items` (`id`, `product_id`, `item_code`, `quantity`, `unit_price`) VALUES
-(1, 3, 'test', '1.0000', '3.0000');
-
 -- --------------------------------------------------------
 
 --
@@ -262,37 +251,7 @@ CREATE TABLE `sma_costing` (
 --
 
 INSERT INTO `sma_costing` (`id`, `date`, `product_id`, `sale_item_id`, `sale_id`, `purchase_item_id`, `quantity`, `purchase_net_unit_cost`, `purchase_unit_cost`, `sale_net_unit_price`, `sale_unit_price`, `quantity_balance`, `inventory`, `overselling`, `option_id`, `purchase_id`) VALUES
-(1, '2021-08-18', 1, 1, 1, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '99.0000', 1, 0, NULL, NULL),
-(2, '2021-08-18', 1, 2, 1, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '99.0000', 1, 0, NULL, NULL),
-(3, '2021-08-18', 1, 3, 1, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '99.0000', 1, 0, NULL, NULL),
-(4, '2021-08-18', 1, 4, 1, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '99.0000', 1, 0, NULL, NULL),
-(5, '2021-08-18', 1, 5, 2, 1, '10.0000', '0.0000', '0.0000', '12.0000', '12.0000', '86.0000', 1, 0, NULL, NULL),
-(6, '2021-08-19', 2, 6, 3, 3, '3.0000', '1.0000', '1.0000', '1.5000', '1.5000', '17.0000', 1, 0, 1, 2),
-(7, '2021-08-30', 2, 7, 4, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '16.0000', 1, 0, 1, 2),
-(8, '2021-08-30', 1, 8, 4, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '85.0000', 1, 0, NULL, NULL),
-(10, '2021-09-14', 5, 11, 7, 6, '1.0000', '1.0000', '1.0000', '4.0000', '4.0000', '99.0000', 1, 0, NULL, NULL),
-(21, '2021-09-14', 5, 22, 8, 6, '2.0000', '1.0202', '1.0202', '4.0000', '4.0000', '96.0000', 1, 0, NULL, NULL),
-(22, '2021-09-14', 1, 23, 8, 1, '2.0000', '1.6981', '1.6981', '0.0000', '0.0000', '78.0000', 1, 0, NULL, NULL),
-(13, '2021-09-14', 1, 14, 9, 1, '1.0000', '0.0000', '0.0000', '3.0000', '3.0000', '83.0000', 1, 0, NULL, NULL),
-(14, '2021-09-14', 2, 15, 9, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '15.0000', 1, 0, 1, 2),
-(15, '2021-09-14', 1, 16, 9, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '83.0000', 1, 0, NULL, NULL),
-(16, '2021-09-14', 1, 17, 9, 1, '1.0000', '0.0000', '0.0000', '3.0000', '3.0000', '83.0000', 1, 0, NULL, NULL),
-(17, '2021-09-14', 4, 18, 9, 5, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '99.0000', 1, 0, NULL, NULL),
-(18, '2021-09-14', 5, 19, 9, 6, '1.0000', '1.0000', '1.0000', '4.0000', '4.0000', '96.0000', 1, 0, NULL, NULL),
-(19, '2021-09-14', 1, 20, 9, 1, '1.0000', '0.0000', '0.0000', '0.0000', '0.0000', '83.0000', 1, 0, NULL, NULL),
-(20, '2021-09-14', 1, 21, 9, 1, '1.0000', '0.0000', '0.0000', '3.0000', '3.0000', '83.0000', 1, 0, NULL, NULL),
-(23, '2021-10-23', 1, 24, 10, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '77.0000', 1, 0, NULL, NULL),
-(24, '2021-10-23', 2, 25, 11, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '14.0000', 1, 0, 1, 2),
-(25, '2021-10-23', 1, 26, 11, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '76.0000', 1, 0, NULL, NULL),
-(26, '2021-10-23', 2, 27, 12, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '13.0000', 1, 0, 1, 2),
-(27, '2021-10-23', 1, 28, 13, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '75.0000', 1, 0, NULL, NULL),
-(28, '2021-10-23', 2, 29, 13, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '12.0000', 1, 0, 1, 2),
-(29, '2021-10-23', 1, 30, 14, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '74.0000', 1, 0, NULL, NULL),
-(30, '2021-10-23', 1, 31, 14, 1, '1.0000', '0.0000', '0.0000', '3.0000', '3.0000', '74.0000', 1, 0, NULL, NULL),
-(31, '2021-10-24', 2, 32, 1, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '11.0000', 1, 0, 1, 2),
-(32, '2021-10-24', 2, 33, 2, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '10.0000', 1, 0, 1, 2),
-(33, '2021-10-25', 2, 34, 3, 3, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '9.0000', 1, 0, 1, 2),
-(34, '2021-10-25', 1, 35, 3, 1, '1.0000', '0.0000', '0.0000', '12.0000', '12.0000', '72.0000', 1, 0, NULL, NULL);
+(1, '2022-01-24', 6, 4, 3, 10, '1.0000', '1.0000', '1.0000', '2.0000', '2.0000', '99.0000', 1, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -390,14 +349,6 @@ CREATE TABLE `sma_deliveries` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sma_deliveries`
---
-
-INSERT INTO `sma_deliveries` (`id`, `date`, `sale_id`, `do_reference_no`, `sale_reference_no`, `customer`, `address`, `note`, `status`, `attachment`, `delivered_by`, `received_by`, `created_by`, `updated_by`, `updated_at`) VALUES
-(1, '2021-08-18 08:20:00', 1, 'DO2021/08/0001', 'SALE/POS2021/08/0001', 'Walk-in Customer', '<p>Customer Address Petaling Jaya Selangor 46000 Malaysia<br>Tel: 0123456789 Email: customer@tecdiary.com</p>', '', 'packing', NULL, 'វិរៈបុនថាំ', 'Test', 1, NULL, NULL),
-(2, '2021-10-23 14:10:00', 12, 'DO0002', 'SALE/POS0010', 'Walk-in Customer', '<p>Customer Address Petaling Jaya Selangor 46000 Malaysia<br>Tel: 0123456789 Email: customer@tecdiary.com</p>', '', 'packing', NULL, '', '', 1, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -433,13 +384,6 @@ CREATE TABLE `sma_expenses` (
   `category_id` int(11) DEFAULT NULL,
   `warehouse_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `sma_expenses`
---
-
-INSERT INTO `sma_expenses` (`id`, `date`, `reference`, `amount`, `note`, `created_by`, `attachment`, `category_id`, `warehouse_id`) VALUES
-(1, '2021-09-05 06:33:00', '2021/09/0001', '10.0000', '', '1', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -561,7 +505,25 @@ INSERT INTO `sma_logs` (`id`, `detail`, `model`, `date`) VALUES
 (5, 'POS Bill is being deleted by owner (User Id: 1)', '{\"model\":{\"id\":\"6\",\"date\":\"2021-09-03 09:25:33\",\"customer_id\":\"4\",\"customer\":\"Anakut\",\"count\":\"2\",\"order_discount_id\":\"\",\"order_tax_id\":\"1\",\"total\":\"15.0000\",\"biller_id\":\"3\",\"warehouse_id\":\"1\",\"created_by\":\"1\",\"suspend_note\":\"1\",\"shipping\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"12\",\"suspend_id\":\"6\",\"product_id\":\"3\",\"product_code\":\"test1234\",\"product_name\":\"test1231\",\"net_unit_price\":\"3.0000\",\"unit_price\":\"3.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"3.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"combo\",\"real_unit_price\":\"3.0000\",\"product_unit_id\":null,\"product_unit_code\":null,\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null},{\"id\":\"13\",\"suspend_id\":\"6\",\"product_id\":\"4\",\"product_code\":\"testing\",\"product_name\":\"testing\",\"net_unit_price\":\"12.0000\",\"unit_price\":\"12.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"12.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"standard\",\"real_unit_price\":\"12.0000\",\"product_unit_id\":\"2\",\"product_unit_code\":\"Pcs\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null}]}', '2021-09-13 08:51:17'),
 (6, 'POS Bill is being deleted by owner (User Id: 1)', '{\"model\":{\"id\":\"7\",\"date\":\"2021-09-11 11:58:28\",\"customer_id\":\"4\",\"customer\":\"Anakut\",\"count\":\"2\",\"order_discount_id\":\"10%\",\"order_tax_id\":\"1\",\"total\":\"18.0000\",\"biller_id\":\"3\",\"warehouse_id\":\"1\",\"created_by\":\"1\",\"suspend_note\":\"1\",\"shipping\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"14\",\"suspend_id\":\"7\",\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":\"1\",\"product_type\":\"standard\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null},{\"id\":\"15\",\"suspend_id\":\"7\",\"product_id\":\"1\",\"product_code\":\"test\",\"product_name\":\"test\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"standard\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null}]}', '2021-09-13 08:51:19'),
 (7, 'POS Bill is being deleted by owner (User Id: 1)', '{\"model\":{\"id\":\"9\",\"date\":\"2021-09-13 15:51:56\",\"customer_id\":\"1\",\"customer\":\"Walk-in Customer\",\"count\":\"2\",\"order_discount_id\":\"\",\"order_tax_id\":\"1\",\"total\":\"14.0000\",\"biller_id\":\"3\",\"warehouse_id\":\"1\",\"created_by\":\"1\",\"suspend_note\":\"1\",\"shipping\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"18\",\"suspend_id\":\"9\",\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"net_unit_price\":\"2.0000\",\"unit_price\":\"2.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"2.0000\",\"serial_no\":\"\",\"option_id\":\"1\",\"product_type\":\"standard\",\"real_unit_price\":\"2.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null},{\"id\":\"19\",\"suspend_id\":\"9\",\"product_id\":\"1\",\"product_code\":\"test\",\"product_name\":\"test\",\"net_unit_price\":\"12.0000\",\"unit_price\":\"12.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"12.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"standard\",\"real_unit_price\":\"12.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null}]}', '2021-09-13 08:52:32'),
-(8, 'POS Bill is being deleted by owner (User Id: 1)', '{\"model\":{\"id\":\"10\",\"date\":\"2021-09-13 15:52:07\",\"customer_id\":\"4\",\"customer\":\"Anakut\",\"count\":\"2\",\"order_discount_id\":\"\",\"order_tax_id\":\"1\",\"total\":\"20.0000\",\"biller_id\":\"3\",\"warehouse_id\":\"1\",\"created_by\":\"1\",\"suspend_note\":\"1\",\"shipping\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"21\",\"suspend_id\":\"10\",\"product_id\":\"3\",\"product_code\":\"test1234\",\"product_name\":\"test1231\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"combo\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":null,\"product_unit_code\":null,\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null},{\"id\":\"20\",\"suspend_id\":\"10\",\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":\"1\",\"product_type\":\"standard\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null}]}', '2021-09-13 08:52:35');
+(8, 'POS Bill is being deleted by owner (User Id: 1)', '{\"model\":{\"id\":\"10\",\"date\":\"2021-09-13 15:52:07\",\"customer_id\":\"4\",\"customer\":\"Anakut\",\"count\":\"2\",\"order_discount_id\":\"\",\"order_tax_id\":\"1\",\"total\":\"20.0000\",\"biller_id\":\"3\",\"warehouse_id\":\"1\",\"created_by\":\"1\",\"suspend_note\":\"1\",\"shipping\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"21\",\"suspend_id\":\"10\",\"product_id\":\"3\",\"product_code\":\"test1234\",\"product_name\":\"test1231\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":null,\"product_type\":\"combo\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":null,\"product_unit_code\":null,\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null},{\"id\":\"20\",\"suspend_id\":\"10\",\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"net_unit_price\":\"10.0000\",\"unit_price\":\"10.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"10.0000\",\"serial_no\":\"\",\"option_id\":\"1\",\"product_type\":\"standard\",\"real_unit_price\":\"10.0000\",\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"ordered\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null}]}', '2021-09-13 08:52:35'),
+(9, 'Delivery is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"2\",\"date\":\"2021-10-23 21:10:00\",\"sale_id\":\"12\",\"do_reference_no\":\"DO0002\",\"sale_reference_no\":\"SALE\\/POS0010\",\"customer\":\"Walk-in Customer\",\"address\":\"<p>Customer Address Petaling Jaya Selangor 46000 Malaysia<br>Tel: 0123456789 Email: customer@tecdiary.com<\\/p>\",\"note\":\"\",\"status\":\"packing\",\"attachment\":null,\"delivered_by\":\"\",\"received_by\":\"\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null}}', '2022-01-24 10:09:11'),
+(10, 'Delivery is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"date\":\"2021-08-18 15:20:00\",\"sale_id\":\"1\",\"do_reference_no\":\"DO2021\\/08\\/0001\",\"sale_reference_no\":\"SALE\\/POS2021\\/08\\/0001\",\"customer\":\"Walk-in Customer\",\"address\":\"<p>Customer Address Petaling Jaya Selangor 46000 Malaysia<br>Tel: 0123456789 Email: customer@tecdiary.com<\\/p>\",\"note\":\"\",\"status\":\"packing\",\"attachment\":null,\"delivered_by\":\"\\u179c\\u17b7\\u179a\\u17c8\\u1794\\u17bb\\u1793\\u1790\\u17b6\\u17c6\",\"received_by\":\"Test\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null}}', '2022-01-24 10:09:13'),
+(11, 'Purchase is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"5\",\"reference_no\":\"PO0005\",\"date\":\"2021-09-14 09:53:00\",\"supplier_id\":\"2\",\"supplier\":\"Supplier Company Name\",\"warehouse_id\":\"1\",\"note\":\"\",\"total\":\"2.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"order_discount\":\"0.0000\",\"total_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"2.0000\",\"paid\":\"2.0000\",\"status\":\"received\",\"payment_status\":\"paid\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"attachment\":null,\"payment_term\":\"0\",\"due_date\":null,\"return_id\":null,\"surcharge\":\"0.0000\",\"return_purchase_ref\":null,\"purchase_id\":null,\"return_purchase_total\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"8\",\"purchase_id\":\"5\",\"transfer_id\":null,\"product_id\":\"5\",\"product_code\":\"49234040\",\"product_name\":\"With Supplier\",\"option_id\":null,\"net_unit_cost\":\"2.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"expiry\":null,\"subtotal\":\"2.0000\",\"quantity_balance\":\"1.0000\",\"date\":\"2021-09-14\",\"status\":\"received\",\"unit_cost\":\"2.0000\",\"real_unit_cost\":\"2.0000\",\"quantity_received\":\"1.0000\",\"supplier_part_no\":\"ID001\",\"purchase_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"base_unit_cost\":\"2.0000\"}]}', '2022-01-24 10:09:21'),
+(12, 'Purchase is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"4\",\"reference_no\":\"PO0004\",\"date\":\"2021-09-14 09:51:00\",\"supplier_id\":\"2\",\"supplier\":\"Supplier Company Name\",\"warehouse_id\":\"1\",\"note\":\"\",\"total\":\"2.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"order_discount\":\"0.0000\",\"total_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"2.0000\",\"paid\":\"0.0000\",\"status\":\"received\",\"payment_status\":\"pending\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"attachment\":null,\"payment_term\":\"0\",\"due_date\":null,\"return_id\":null,\"surcharge\":\"0.0000\",\"return_purchase_ref\":null,\"purchase_id\":null,\"return_purchase_total\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"7\",\"purchase_id\":\"4\",\"transfer_id\":null,\"product_id\":\"5\",\"product_code\":\"49234040\",\"product_name\":\"With Supplier\",\"option_id\":null,\"net_unit_cost\":\"2.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"expiry\":null,\"subtotal\":\"2.0000\",\"quantity_balance\":\"1.0000\",\"date\":\"2021-09-14\",\"status\":\"received\",\"unit_cost\":\"2.0000\",\"real_unit_cost\":\"2.0000\",\"quantity_received\":\"1.0000\",\"supplier_part_no\":\"ID001\",\"purchase_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"base_unit_cost\":\"2.0000\"}]}', '2022-01-24 10:09:21'),
+(13, 'Purchase is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"3\",\"reference_no\":\"PO2021\\/08\\/0003\",\"date\":\"2021-08-19 09:58:00\",\"supplier_id\":\"2\",\"supplier\":\"Supplier Company Name\",\"warehouse_id\":\"1\",\"note\":\"\",\"total\":\"15.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"order_discount\":\"0.0000\",\"total_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"15.0000\",\"paid\":\"15.0000\",\"status\":\"received\",\"payment_status\":\"paid\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"attachment\":null,\"payment_term\":\"0\",\"due_date\":null,\"return_id\":null,\"surcharge\":\"0.0000\",\"return_purchase_ref\":null,\"purchase_id\":null,\"return_purchase_total\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"4\",\"purchase_id\":\"3\",\"transfer_id\":null,\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"option_id\":\"1\",\"net_unit_cost\":\"1.0000\",\"quantity\":\"15.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"expiry\":\"2021-08-31\",\"subtotal\":\"15.0000\",\"quantity_balance\":\"15.0000\",\"date\":\"2021-08-19\",\"status\":\"received\",\"unit_cost\":\"1.0000\",\"real_unit_cost\":\"1.0000\",\"quantity_received\":\"15.0000\",\"supplier_part_no\":null,\"purchase_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"15.0000\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"base_unit_cost\":\"1.0000\"}]}', '2022-01-24 10:09:21'),
+(14, 'Purchase is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"2\",\"reference_no\":\"PO2021\\/08\\/0002\",\"date\":\"2021-08-19 09:58:00\",\"supplier_id\":\"2\",\"supplier\":\"Supplier Company Name\",\"warehouse_id\":\"1\",\"note\":\"\",\"total\":\"20.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"order_discount\":\"0.0000\",\"total_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"20.0000\",\"paid\":\"20.0000\",\"status\":\"received\",\"payment_status\":\"paid\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"attachment\":null,\"payment_term\":\"0\",\"due_date\":null,\"return_id\":null,\"surcharge\":\"0.0000\",\"return_purchase_ref\":null,\"purchase_id\":null,\"return_purchase_total\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"3\",\"purchase_id\":\"2\",\"transfer_id\":null,\"product_id\":\"2\",\"product_code\":\"Product\",\"product_name\":\"Product\",\"option_id\":\"1\",\"net_unit_cost\":\"1.0000\",\"quantity\":\"20.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"expiry\":\"2021-08-22\",\"subtotal\":\"20.0000\",\"quantity_balance\":\"8.0000\",\"date\":\"2021-08-19\",\"status\":\"received\",\"unit_cost\":\"1.0000\",\"real_unit_cost\":\"1.0000\",\"quantity_received\":\"20.0000\",\"supplier_part_no\":null,\"purchase_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"20.0000\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"base_unit_cost\":\"1.0000\"}]}', '2022-01-24 10:09:21'),
+(15, 'Purchase is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"reference_no\":\"PO2021\\/08\\/0001\",\"date\":\"2021-08-18 15:22:00\",\"supplier_id\":\"2\",\"supplier\":\"Supplier Company Name\",\"warehouse_id\":\"1\",\"note\":\"\",\"total\":\"180.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"order_discount\":\"0.0000\",\"total_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"180.0000\",\"paid\":\"180.0000\",\"status\":\"received\",\"payment_status\":\"paid\",\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"attachment\":null,\"payment_term\":\"0\",\"due_date\":null,\"return_id\":null,\"surcharge\":\"0.0000\",\"return_purchase_ref\":null,\"purchase_id\":null,\"return_purchase_total\":\"0.0000\",\"cgst\":null,\"sgst\":null,\"igst\":null},\"items\":[{\"id\":\"2\",\"purchase_id\":\"1\",\"transfer_id\":null,\"product_id\":\"1\",\"product_code\":\"test\",\"product_name\":\"test\",\"option_id\":null,\"net_unit_cost\":\"9.0000\",\"quantity\":\"20.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"expiry\":null,\"subtotal\":\"180.0000\",\"quantity_balance\":\"20.0000\",\"date\":\"2021-08-18\",\"status\":\"received\",\"unit_cost\":\"9.0000\",\"real_unit_cost\":\"9.0000\",\"quantity_received\":\"20.0000\",\"supplier_part_no\":null,\"purchase_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"20.0000\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"base_unit_cost\":\"9.0000\"}]}', '2022-01-24 10:09:21'),
+(16, 'Expense is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"date\":\"2021-09-05 13:33:00\",\"reference\":\"2021\\/09\\/0001\",\"amount\":\"10.0000\",\"note\":\"\",\"created_by\":\"1\",\"attachment\":null,\"category_id\":\"1\",\"warehouse_id\":\"1\"}}', '2022-01-24 10:09:28'),
+(17, 'Sale is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"2\",\"date\":\"2022-01-24 17:17:45\",\"reference_no\":\"SALE\\/POS0019\",\"customer_id\":\"1\",\"customer\":\"Walk-in Customer\",\"biller_id\":\"3\",\"biller\":\"Test Biller\",\"warehouse_id\":\"1\",\"note\":\"\",\"staff_note\":\"\",\"total\":\"12.0000\",\"product_discount\":\"0.0000\",\"order_discount_id\":\"\",\"total_discount\":\"0.0000\",\"order_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"12.0000\",\"sale_status\":\"completed\",\"payment_status\":\"paid\",\"payment_term\":\"0\",\"due_date\":null,\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"total_items\":\"1\",\"pos\":\"1\",\"paid\":\"12.0000\",\"return_id\":null,\"surcharge\":\"0.0000\",\"attachment\":null,\"return_sale_ref\":null,\"sale_id\":null,\"return_sale_total\":\"0.0000\",\"rounding\":\"0.0000\",\"suspend_note\":null,\"api\":\"0\",\"shop\":\"0\",\"address_id\":null,\"reserve_id\":null,\"hash\":\"eeeb974e864715d34f93f77e56ad8b933f32e4fe0ccc1e45e2b9abf895b54ff4\",\"manual_payment\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"payment_method\":null,\"room_id\":null,\"customer_contact\":null,\"room_number\":null},\"items\":[{\"id\":\"3\",\"sale_id\":\"2\",\"product_id\":\"1\",\"product_code\":\"test\",\"product_name\":\"test\",\"product_type\":\"standard\",\"option_id\":null,\"net_unit_price\":\"12.0000\",\"unit_price\":\"12.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"12.0000\",\"serial_no\":\"\",\"real_unit_price\":\"12.0000\",\"sale_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"tax_code\":\"NT\",\"tax_name\":\"No Tax\",\"tax_rate\":\"0.0000\",\"image\":\"no_image.png\",\"details\":\"\",\"variant\":null,\"hsn_code\":null,\"second_name\":\"test test\",\"base_unit_id\":\"1\",\"base_unit_code\":\"unit\"}]}', '2022-01-24 10:18:27'),
+(18, 'Sale is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"date\":\"2022-01-24 17:10:58\",\"reference_no\":\"SALE\\/POS0018\",\"customer_id\":\"1\",\"customer\":\"Walk-in Customer\",\"biller_id\":\"3\",\"biller\":\"Test Biller\",\"warehouse_id\":\"1\",\"note\":\"\",\"staff_note\":\"\",\"total\":\"13.0000\",\"product_discount\":\"2.0000\",\"order_discount_id\":\"\",\"total_discount\":\"2.0000\",\"order_discount\":\"0.0000\",\"product_tax\":\"0.0000\",\"order_tax_id\":\"1\",\"order_tax\":\"0.0000\",\"total_tax\":\"0.0000\",\"shipping\":\"0.0000\",\"grand_total\":\"13.0000\",\"sale_status\":\"completed\",\"payment_status\":\"paid\",\"payment_term\":\"0\",\"due_date\":null,\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"total_items\":\"2\",\"pos\":\"1\",\"paid\":\"13.0000\",\"return_id\":null,\"surcharge\":\"0.0000\",\"attachment\":null,\"return_sale_ref\":null,\"sale_id\":null,\"return_sale_total\":\"0.0000\",\"rounding\":\"0.0000\",\"suspend_note\":null,\"api\":\"0\",\"shop\":\"0\",\"address_id\":null,\"reserve_id\":null,\"hash\":\"3cd339a4ea16bc8fd0607c11d9eca9f792a32366f0b4959a0b91d98ea1315491\",\"manual_payment\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"payment_method\":null,\"room_id\":null,\"customer_contact\":null,\"room_number\":null},\"items\":[{\"id\":\"1\",\"sale_id\":\"1\",\"product_id\":\"1\",\"product_code\":\"test\",\"product_name\":\"test\",\"product_type\":\"standard\",\"option_id\":null,\"net_unit_price\":\"12.0000\",\"unit_price\":\"12.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"0\",\"item_discount\":\"0.0000\",\"subtotal\":\"12.0000\",\"serial_no\":\"\",\"real_unit_price\":\"12.0000\",\"sale_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"tax_code\":\"NT\",\"tax_name\":\"No Tax\",\"tax_rate\":\"0.0000\",\"image\":\"no_image.png\",\"details\":\"\",\"variant\":null,\"hsn_code\":null,\"second_name\":\"test test\",\"base_unit_id\":\"1\",\"base_unit_code\":\"unit\"},{\"id\":\"2\",\"sale_id\":\"1\",\"product_id\":\"3\",\"product_code\":\"test1234\",\"product_name\":\"test1231\",\"product_type\":\"combo\",\"option_id\":\"0\",\"net_unit_price\":\"1.0000\",\"unit_price\":\"1.0000\",\"quantity\":\"1.0000\",\"warehouse_id\":\"1\",\"item_tax\":\"0.0000\",\"tax_rate_id\":\"1\",\"tax\":\"0\",\"discount\":\"2\",\"item_discount\":\"2.0000\",\"subtotal\":\"1.0000\",\"serial_no\":\"\",\"real_unit_price\":\"3.0000\",\"sale_item_id\":null,\"product_unit_id\":\"1\",\"product_unit_code\":\"unit\",\"unit_quantity\":\"1.0000\",\"comment\":\"\",\"gst\":null,\"cgst\":null,\"sgst\":null,\"igst\":null,\"tax_code\":\"NT\",\"tax_name\":\"No Tax\",\"tax_rate\":\"0.0000\",\"image\":\"no_image.png\",\"details\":\"\",\"variant\":null,\"hsn_code\":null,\"second_name\":\"\",\"base_unit_id\":null,\"base_unit_code\":null}]}', '2022-01-24 10:18:27'),
+(19, 'Product is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"5\",\"code\":\"49234040\",\"name\":\"With Supplier\",\"unit\":\"1\",\"cost\":\"2.0000\",\"price\":\"4.0000\",\"alert_quantity\":\"0.0000\",\"image\":\"no_image.png\",\"category_id\":\"1\",\"subcategory_id\":null,\"cf1\":\"\",\"cf2\":\"\",\"cf3\":\"\",\"cf4\":\"\",\"cf5\":\"\",\"cf6\":\"\",\"quantity\":\"96.0000\",\"tax_rate\":\"1\",\"track_quantity\":\"1\",\"details\":\"<p>I am cute.<\\/p>\",\"warehouse\":null,\"barcode_symbology\":\"code128\",\"file\":\"\",\"product_details\":\"<p>Fresh and cool<\\/p>\",\"tax_method\":\"1\",\"type\":\"standard\",\"supplier1\":\"2\",\"supplier1price\":\"2.0000\",\"supplier2\":null,\"supplier2price\":null,\"supplier3\":null,\"supplier3price\":null,\"supplier4\":null,\"supplier4price\":null,\"supplier5\":null,\"supplier5price\":null,\"promotion\":null,\"promo_price\":null,\"start_date\":null,\"end_date\":null,\"supplier1_part_no\":\"ID001\",\"supplier2_part_no\":null,\"supplier3_part_no\":null,\"supplier4_part_no\":null,\"supplier5_part_no\":null,\"sale_unit\":\"1\",\"purchase_unit\":\"1\",\"brand\":\"0\",\"slug\":\"49234040\",\"featured\":null,\"weight\":\"2.0000\",\"hsn_code\":null,\"views\":\"0\",\"hide\":\"0\",\"second_name\":\"WS\",\"hide_pos\":\"0\"}}', '2022-01-24 10:18:32'),
+(20, 'Product is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"2\",\"code\":\"Product\",\"name\":\"Product\",\"unit\":\"1\",\"cost\":\"1.0000\",\"price\":\"2.0000\",\"alert_quantity\":\"20.0000\",\"image\":\"no_image.png\",\"category_id\":\"1\",\"subcategory_id\":null,\"cf1\":\"\",\"cf2\":\"\",\"cf3\":\"\",\"cf4\":\"\",\"cf5\":\"\",\"cf6\":\"\",\"quantity\":\"-12.0000\",\"tax_rate\":\"1\",\"track_quantity\":\"1\",\"details\":\"\",\"warehouse\":null,\"barcode_symbology\":\"code128\",\"file\":\"\",\"product_details\":\"\",\"tax_method\":\"1\",\"type\":\"standard\",\"supplier1\":\"0\",\"supplier1price\":null,\"supplier2\":null,\"supplier2price\":null,\"supplier3\":null,\"supplier3price\":null,\"supplier4\":null,\"supplier4price\":null,\"supplier5\":null,\"supplier5price\":null,\"promotion\":\"1\",\"promo_price\":\"1.5000\",\"start_date\":\"2021-08-19\",\"end_date\":\"2021-08-23\",\"supplier1_part_no\":\"\",\"supplier2_part_no\":null,\"supplier3_part_no\":null,\"supplier4_part_no\":null,\"supplier5_part_no\":null,\"sale_unit\":\"1\",\"purchase_unit\":\"1\",\"brand\":\"0\",\"slug\":\"product\",\"featured\":null,\"weight\":\"4.0000\",\"hsn_code\":null,\"views\":\"0\",\"hide\":\"0\",\"second_name\":\"\",\"hide_pos\":\"0\"}}', '2022-01-24 10:18:32'),
+(21, 'Product is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"code\":\"test\",\"name\":\"test\",\"unit\":\"1\",\"cost\":\"8.0000\",\"price\":\"12.0000\",\"alert_quantity\":\"0.0000\",\"image\":\"no_image.png\",\"category_id\":\"1\",\"subcategory_id\":\"2\",\"cf1\":\"\",\"cf2\":\"\",\"cf3\":\"\",\"cf4\":\"\",\"cf5\":\"\",\"cf6\":\"\",\"quantity\":\"86.0000\",\"tax_rate\":\"1\",\"track_quantity\":\"1\",\"details\":\"\",\"warehouse\":null,\"barcode_symbology\":\"code128\",\"file\":\"\",\"product_details\":\"\",\"tax_method\":\"1\",\"type\":\"standard\",\"supplier1\":\"0\",\"supplier1price\":null,\"supplier2\":null,\"supplier2price\":null,\"supplier3\":null,\"supplier3price\":null,\"supplier4\":null,\"supplier4price\":null,\"supplier5\":null,\"supplier5price\":null,\"promotion\":null,\"promo_price\":null,\"start_date\":null,\"end_date\":null,\"supplier1_part_no\":\"\",\"supplier2_part_no\":null,\"supplier3_part_no\":null,\"supplier4_part_no\":null,\"supplier5_part_no\":null,\"sale_unit\":\"1\",\"purchase_unit\":\"1\",\"brand\":\"0\",\"slug\":\"test\",\"featured\":null,\"weight\":\"10.0000\",\"hsn_code\":null,\"views\":\"0\",\"hide\":\"0\",\"second_name\":\"test test\",\"hide_pos\":\"0\"}}', '2022-01-24 10:18:32'),
+(22, 'Product is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"3\",\"code\":\"test1234\",\"name\":\"test1231\",\"unit\":null,\"cost\":null,\"price\":\"3.0000\",\"alert_quantity\":\"0.0000\",\"image\":\"no_image.png\",\"category_id\":\"1\",\"subcategory_id\":null,\"cf1\":\"\",\"cf2\":\"\",\"cf3\":\"\",\"cf4\":\"\",\"cf5\":\"\",\"cf6\":\"\",\"quantity\":null,\"tax_rate\":\"1\",\"track_quantity\":\"0\",\"details\":\"\",\"warehouse\":null,\"barcode_symbology\":\"code128\",\"file\":\"\",\"product_details\":\"\",\"tax_method\":\"1\",\"type\":\"combo\",\"supplier1\":\"0\",\"supplier1price\":null,\"supplier2\":null,\"supplier2price\":null,\"supplier3\":null,\"supplier3price\":null,\"supplier4\":null,\"supplier4price\":null,\"supplier5\":null,\"supplier5price\":null,\"promotion\":null,\"promo_price\":null,\"start_date\":null,\"end_date\":null,\"supplier1_part_no\":\"\",\"supplier2_part_no\":null,\"supplier3_part_no\":null,\"supplier4_part_no\":null,\"supplier5_part_no\":null,\"sale_unit\":\"0\",\"purchase_unit\":\"0\",\"brand\":\"0\",\"slug\":\"test1231\",\"featured\":null,\"weight\":\"0.0000\",\"hsn_code\":null,\"views\":\"0\",\"hide\":\"0\",\"second_name\":\"\",\"hide_pos\":\"0\"}}', '2022-01-24 10:18:32'),
+(23, 'Product is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"4\",\"code\":\"testing\",\"name\":\"testing\",\"unit\":\"2\",\"cost\":\"0.0000\",\"price\":\"12.0000\",\"alert_quantity\":\"0.0000\",\"image\":\"no_image.png\",\"category_id\":\"1\",\"subcategory_id\":null,\"cf1\":\"\",\"cf2\":\"\",\"cf3\":\"\",\"cf4\":\"\",\"cf5\":\"\",\"cf6\":\"\",\"quantity\":\"99.0000\",\"tax_rate\":\"1\",\"track_quantity\":\"1\",\"details\":\"\",\"warehouse\":null,\"barcode_symbology\":\"code128\",\"file\":\"\",\"product_details\":\"\",\"tax_method\":\"1\",\"type\":\"standard\",\"supplier1\":\"0\",\"supplier1price\":null,\"supplier2\":null,\"supplier2price\":null,\"supplier3\":null,\"supplier3price\":null,\"supplier4\":null,\"supplier4price\":null,\"supplier5\":null,\"supplier5price\":null,\"promotion\":null,\"promo_price\":null,\"start_date\":null,\"end_date\":null,\"supplier1_part_no\":\"\",\"supplier2_part_no\":null,\"supplier3_part_no\":null,\"supplier4_part_no\":null,\"supplier5_part_no\":null,\"sale_unit\":\"0\",\"purchase_unit\":\"0\",\"brand\":\"0\",\"slug\":\"testing\",\"featured\":null,\"weight\":\"0.0000\",\"hsn_code\":null,\"views\":\"0\",\"hide\":\"0\",\"second_name\":\"T\",\"hide_pos\":\"0\"}}', '2022-01-24 10:18:32'),
+(24, 'Quantity adjustment is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"3\",\"date\":\"2021-09-14 08:54:00\",\"reference_no\":\"2021\\/09\\/0003\",\"warehouse_id\":\"1\",\"note\":\"\",\"attachment\":null,\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"count_id\":null},\"items\":[{\"id\":\"3\",\"adjustment_id\":\"3\",\"product_id\":\"5\",\"option_id\":null,\"quantity\":\"100.0000\",\"warehouse_id\":\"1\",\"serial_no\":\"\",\"type\":\"addition\",\"product_code\":null,\"product_name\":null,\"image\":null,\"details\":null,\"variant\":null}]}', '2022-01-24 10:18:38'),
+(25, 'Quantity adjustment is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"2\",\"date\":\"2021-08-26 13:44:00\",\"reference_no\":\"2021\\/08\\/0002\",\"warehouse_id\":\"1\",\"note\":\"\",\"attachment\":null,\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"count_id\":null},\"items\":[{\"id\":\"2\",\"adjustment_id\":\"2\",\"product_id\":\"4\",\"option_id\":null,\"quantity\":\"100.0000\",\"warehouse_id\":\"1\",\"serial_no\":\"\",\"type\":\"addition\",\"product_code\":null,\"product_name\":null,\"image\":null,\"details\":null,\"variant\":null}]}', '2022-01-24 10:18:38'),
+(26, 'Quantity adjustment is being deleted by demo (User Id: 1)', '{\"model\":{\"id\":\"1\",\"date\":\"2021-08-18 15:12:00\",\"reference_no\":\"2021\\/08\\/0001\",\"warehouse_id\":\"1\",\"note\":\"\",\"attachment\":null,\"created_by\":\"1\",\"updated_by\":null,\"updated_at\":null,\"count_id\":null},\"items\":[{\"id\":\"1\",\"adjustment_id\":\"1\",\"product_id\":\"1\",\"option_id\":null,\"quantity\":\"100.0000\",\"warehouse_id\":\"1\",\"serial_no\":\"\",\"type\":\"addition\",\"product_code\":null,\"product_name\":null,\"image\":null,\"details\":null,\"variant\":null}]}', '2022-01-24 10:18:38');
 
 -- --------------------------------------------------------
 
@@ -630,7 +592,7 @@ CREATE TABLE `sma_order_ref` (
 --
 
 INSERT INTO `sma_order_ref` (`ref_id`, `date`, `so`, `qu`, `po`, `to`, `pos`, `do`, `pay`, `re`, `rep`, `ex`, `ppay`, `qa`) VALUES
-(1, '2015-03-01', 2, 2, 6, 1, 16, 3, 16, 1, 1, 2, 5, 4);
+(1, '2015-03-01', 2, 2, 6, 1, 21, 3, 21, 1, 1, 2, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -669,33 +631,7 @@ CREATE TABLE `sma_payments` (
 --
 
 INSERT INTO `sma_payments` (`id`, `date`, `sale_id`, `return_id`, `purchase_id`, `reference_no`, `transaction_id`, `paid_by`, `cheque_no`, `cc_no`, `cc_holder`, `cc_month`, `cc_year`, `cc_type`, `amount`, `currency`, `created_by`, `attachment`, `type`, `note`, `pos_paid`, `pos_balance`, `approval_code`) VALUES
-(1, '2021-08-18 08:18:29', 1, NULL, NULL, 'IPAY2021/08/0001', NULL, 'cash', '', '', '', '', '', '', '48.0000', NULL, 1, NULL, 'received', '', '48.0000', '0.0000', NULL),
-(2, '2021-08-18 08:22:00', NULL, NULL, 1, 'POP2021/08/0001', NULL, 'cash', '', '', '', '', '', 'Visa', '180.0000', NULL, 1, NULL, 'sent', '', '0.0000', '0.0000', NULL),
-(3, '2021-08-19 03:00:00', NULL, NULL, 3, 'POP2021/08/0002', NULL, 'cash', '', '', '', '', '', 'Visa', '15.0000', NULL, 1, NULL, 'sent', '', '0.0000', '0.0000', NULL),
-(4, '2021-08-19 03:00:00', NULL, NULL, 2, 'POP2021/08/0003', NULL, 'cash', '', '', '', '', '', 'Visa', '20.0000', NULL, 1, NULL, 'sent', '', '0.0000', '0.0000', NULL),
-(5, '2021-08-19 07:22:11', 3, NULL, NULL, 'IPAY2021/08/0002', NULL, 'cash', '', '', '', '', '', '', '4.5000', NULL, 1, NULL, 'received', '', '4.5000', '0.0000', NULL),
-(6, '2021-08-30 04:44:03', 4, NULL, NULL, 'IPAY2021/08/0003', NULL, 'cash', '', '', '', '', '', '', '14.0000', NULL, 1, NULL, 'received', '', '14.0000', '0.0000', NULL),
-(7, '2021-09-14 02:01:37', 5, NULL, NULL, 'IPAY2021/09/0004', NULL, 'cash', '', '', '', '', '', '', '4.0000', NULL, 1, NULL, 'received', '', '4.0000', '0.0000', NULL),
-(8, '2021-09-14 02:03:00', 6, NULL, NULL, 'IPAY2021/09/0005', NULL, 'cash', '', '', '', '', '', 'Visa', '-4.0000', NULL, 1, NULL, 'returned', NULL, '0.0000', '0.0000', NULL),
-(9, '2021-09-14 02:31:12', 7, NULL, NULL, 'IPAY0006', NULL, 'cash', '', '', '', '', '', '', '4.0000', NULL, 1, NULL, 'received', '', '4.0000', '0.0000', NULL),
-(10, '2021-09-14 02:35:33', 8, NULL, NULL, 'IPAY0007', NULL, 'cash', '', '', '', '', '', '', '8.0000', NULL, 1, NULL, 'received', '', '8.0000', '0.0000', NULL),
-(11, '2021-09-14 02:54:00', NULL, NULL, 5, 'POP0004', NULL, 'cash', '', '', '', '', '', 'Visa', '2.0000', NULL, 1, NULL, 'sent', '', '0.0000', '0.0000', NULL),
-(12, '2021-09-14 04:09:06', 9, NULL, NULL, 'IPAY0008', NULL, 'cash', '', '', '', '', '', '', '39.0000', NULL, 1, NULL, 'received', '', '39.0000', '0.0000', NULL),
-(13, '2021-10-23 03:46:46', 10, NULL, NULL, 'IPAY0009', NULL, 'cash', '', '', '', '', '', '', '12.0000', NULL, 1, NULL, 'received', '', '12.0000', '0.0000', NULL),
-(14, '2021-10-23 13:57:10', 11, NULL, NULL, 'IPAY0010', NULL, 'cash', '', '', '', '', '', '', '14.0000', NULL, 1, NULL, 'received', '', '14.0000', '0.0000', NULL),
-(15, '2021-10-23 13:57:39', 12, NULL, NULL, 'IPAY0011', NULL, 'cash', '', '', '', '', '', '', '2.0000', NULL, 1, NULL, 'received', '', '2.0000', '0.0000', NULL),
-(16, '2021-10-23 14:30:57', 13, NULL, NULL, 'IPAY0012', NULL, 'cash', '', '', '', '', '', '', '14.0000', NULL, 1, NULL, 'received', '', '14.0000', '0.0000', NULL),
-(17, '2021-10-23 15:10:41', 14, NULL, NULL, 'IPAY0013', NULL, 'cash', '', '', '', '', '', '', '15.0000', NULL, 1, NULL, 'received', '', '15.0000', '0.0000', NULL),
-(18, '2021-10-24 05:05:57', 1, NULL, NULL, 'IPAY0014', NULL, 'cash', '', '', '', '', '', '', '2.0000', NULL, 1, NULL, 'received', '', '2.0000', '0.0000', NULL),
-(19, '2021-10-24 05:06:07', 2, NULL, NULL, 'IPAY0015', NULL, 'cash', '', '', '', '', '', '', '2.0000', NULL, 1, NULL, 'received', '', '2.0000', '0.0000', NULL),
-(20, '2021-10-24 19:38:05', 3, NULL, NULL, 'HOTEL/1635147485', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '0.0000', '0.0000', NULL),
-(21, '2021-10-24 19:38:47', 3, NULL, NULL, 'HOTEL/1635147527', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(22, '2021-10-24 19:39:05', 3, NULL, NULL, 'HOTEL/1635147545', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(23, '2021-10-24 19:42:11', 3, NULL, NULL, 'HOTEL/1635147731', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(24, '2021-10-24 19:43:20', 3, NULL, NULL, 'HOTEL/1635147800', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(25, '2021-10-24 19:43:37', 3, NULL, NULL, 'HOTEL/1635147817', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(26, '2021-10-24 19:48:24', 3, NULL, NULL, 'HOTEL/1635148104', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL),
-(27, '2021-10-24 19:49:18', 3, NULL, NULL, 'HOTEL/1635148158', NULL, 'cash', NULL, NULL, NULL, NULL, NULL, NULL, '14.0000', NULL, 1, '', 'received', 'Payment From Hotel', '14.0000', '0.0000', NULL);
+(3, '2022-01-24 10:20:21', 3, NULL, NULL, 'IPAY0020', NULL, 'cash', '', '', '', '', '', '', '2.0000', NULL, 1, NULL, 'received', '', '2.0000', '0.0000', NULL);
 
 -- --------------------------------------------------------
 
@@ -1029,11 +965,7 @@ CREATE TABLE `sma_products` (
 --
 
 INSERT INTO `sma_products` (`id`, `code`, `name`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `product_details`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `hide_pos`) VALUES
-(1, 'test', 'test', 1, '8.0000', '12.0000', '0.0000', 'no_image.png', 1, 2, '', '', '', '', '', '', '92.0000', 1, 1, '', NULL, 'code128', '', '', 1, 'standard', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, 1, 1, 0, 'test', NULL, '10.0000', NULL, 0, 0, 'test test', 0),
-(2, 'Product', 'Product', 1, '1.0000', '2.0000', '20.0000', 'no_image.png', 1, NULL, '', '', '', '', '', '', '24.0000', 1, 1, '', NULL, 'code128', '', '', 1, 'standard', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '1.5000', '2021-08-19', '2021-08-23', '', NULL, NULL, NULL, NULL, 1, 1, 0, 'product', NULL, '4.0000', NULL, 0, 0, '', 0),
-(3, 'test1234', 'test1231', NULL, NULL, '3.0000', '0.0000', 'no_image.png', 1, NULL, '', '', '', '', '', '', NULL, 1, 0, '', NULL, 'code128', '', '', 1, 'combo', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, 0, 0, 0, 'test1231', NULL, '0.0000', NULL, 0, 0, '', 0),
-(4, 'testing', 'testing', 2, '0.0000', '12.0000', '0.0000', 'no_image.png', 1, NULL, '', '', '', '', '', '', '99.0000', 1, 1, '', NULL, 'code128', '', '', 1, 'standard', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, 0, 0, 0, 'testing', NULL, '0.0000', NULL, 0, 0, 'T', 0),
-(5, '49234040', 'With Supplier', 1, '2.0000', '4.0000', '0.0000', 'no_image.png', 1, NULL, '', '', '', '', '', '', '98.0000', 1, 1, '<p>I am cute.</p>', NULL, 'code128', '', '<p>Fresh and cool</p>', 1, 'standard', 2, '2.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ID001', NULL, NULL, NULL, NULL, 1, 1, 0, '49234040', NULL, '2.0000', NULL, 0, 0, 'WS', 0);
+(6, '53300126', 'test', 1, '1.0000', '2.0000', '0.0000', 'no_image.png', 1, 2, '', '', '', '', '', '', '99.0000', 1, 1, '', NULL, 'code128', '', '', 1, 'standard', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, 1, 1, 0, '53300126', NULL, '12.0000', NULL, 0, 0, 'Test 2nd', 0);
 
 -- --------------------------------------------------------
 
@@ -1060,16 +992,6 @@ CREATE TABLE `sma_product_prices` (
   `price` decimal(25,4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sma_product_prices`
---
-
-INSERT INTO `sma_product_prices` (`id`, `product_id`, `price_group_id`, `price`) VALUES
-(1, 4, 2, '10.0000'),
-(2, 3, 2, '10.0000'),
-(3, 1, 2, '10.0000'),
-(4, 2, 2, '10.0000');
-
 -- --------------------------------------------------------
 
 --
@@ -1084,13 +1006,6 @@ CREATE TABLE `sma_product_variants` (
   `price` decimal(25,4) DEFAULT NULL,
   `quantity` decimal(15,4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `sma_product_variants`
---
-
-INSERT INTO `sma_product_variants` (`id`, `product_id`, `name`, `cost`, `price`, `quantity`) VALUES
-(1, 2, 'White', '1.0000', '0.0000', '24.0000');
 
 -- --------------------------------------------------------
 
@@ -1159,17 +1074,6 @@ CREATE TABLE `sma_purchases` (
   `igst` decimal(25,4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sma_purchases`
---
-
-INSERT INTO `sma_purchases` (`id`, `reference_no`, `date`, `supplier_id`, `supplier`, `warehouse_id`, `note`, `total`, `product_discount`, `order_discount_id`, `order_discount`, `total_discount`, `product_tax`, `order_tax_id`, `order_tax`, `total_tax`, `shipping`, `grand_total`, `paid`, `status`, `payment_status`, `created_by`, `updated_by`, `updated_at`, `attachment`, `payment_term`, `due_date`, `return_id`, `surcharge`, `return_purchase_ref`, `purchase_id`, `return_purchase_total`, `cgst`, `sgst`, `igst`) VALUES
-(1, 'PO2021/08/0001', '2021-08-18 08:22:00', 2, 'Supplier Company Name', 1, '', '180.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '180.0000', '180.0000', 'received', 'paid', 1, NULL, NULL, NULL, 0, NULL, NULL, '0.0000', NULL, NULL, '0.0000', NULL, NULL, NULL),
-(2, 'PO2021/08/0002', '2021-08-19 02:58:00', 2, 'Supplier Company Name', 1, '', '20.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '20.0000', '20.0000', 'received', 'paid', 1, NULL, NULL, NULL, 0, NULL, NULL, '0.0000', NULL, NULL, '0.0000', NULL, NULL, NULL),
-(3, 'PO2021/08/0003', '2021-08-19 02:58:00', 2, 'Supplier Company Name', 1, '', '15.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '15.0000', '15.0000', 'received', 'paid', 1, NULL, NULL, NULL, 0, NULL, NULL, '0.0000', NULL, NULL, '0.0000', NULL, NULL, NULL),
-(4, 'PO0004', '2021-09-14 02:51:00', 2, 'Supplier Company Name', 1, '', '2.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '2.0000', '0.0000', 'received', 'pending', 1, NULL, NULL, NULL, 0, NULL, NULL, '0.0000', NULL, NULL, '0.0000', NULL, NULL, NULL),
-(5, 'PO0005', '2021-09-14 02:53:00', 2, 'Supplier Company Name', 1, '', '2.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '2.0000', '2.0000', 'received', 'paid', 1, NULL, NULL, NULL, 0, NULL, NULL, '0.0000', NULL, NULL, '0.0000', NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -1217,14 +1121,11 @@ CREATE TABLE `sma_purchase_items` (
 --
 
 INSERT INTO `sma_purchase_items` (`id`, `purchase_id`, `transfer_id`, `product_id`, `product_code`, `product_name`, `option_id`, `net_unit_cost`, `quantity`, `warehouse_id`, `item_tax`, `tax_rate_id`, `tax`, `discount`, `item_discount`, `expiry`, `subtotal`, `quantity_balance`, `date`, `status`, `unit_cost`, `real_unit_cost`, `quantity_received`, `supplier_part_no`, `purchase_item_id`, `product_unit_id`, `product_unit_code`, `unit_quantity`, `gst`, `cgst`, `sgst`, `igst`, `base_unit_cost`) VALUES
-(1, NULL, NULL, 1, 'test', 'test', NULL, '0.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '0.0000', '72.0000', '2021-08-18', 'received', '0.0000', '0.0000', '100.0000', NULL, NULL, 1, 'unit', '100.0000', NULL, NULL, NULL, NULL, NULL),
-(2, 1, NULL, 1, 'test', 'test', NULL, '9.0000', '20.0000', 1, '0.0000', 1, '0', '0', '0.0000', NULL, '180.0000', '20.0000', '2021-08-18', 'received', '9.0000', '9.0000', '20.0000', NULL, NULL, 1, 'unit', '20.0000', NULL, NULL, NULL, NULL, '9.0000'),
-(3, 2, NULL, 2, 'Product', 'Product', 1, '1.0000', '20.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2021-08-22', '20.0000', '9.0000', '2021-08-19', 'received', '1.0000', '1.0000', '20.0000', NULL, NULL, 1, 'unit', '20.0000', NULL, NULL, NULL, NULL, '1.0000'),
-(4, 3, NULL, 2, 'Product', 'Product', 1, '1.0000', '15.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2021-08-31', '15.0000', '15.0000', '2021-08-19', 'received', '1.0000', '1.0000', '15.0000', NULL, NULL, 1, 'unit', '15.0000', NULL, NULL, NULL, NULL, '1.0000'),
+(1, NULL, NULL, 1, 'test', 'test', NULL, '0.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '0.0000', '86.0000', '2021-08-18', 'received', '0.0000', '0.0000', '100.0000', NULL, NULL, 1, 'unit', '100.0000', NULL, NULL, NULL, NULL, NULL),
+(10, NULL, NULL, 6, '53300126', 'test', NULL, '1.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '100.0000', '99.0000', '2022-01-24', 'received', '1.0000', '1.0000', '100.0000', NULL, NULL, 1, 'unit', '100.0000', NULL, NULL, NULL, NULL, NULL),
+(9, NULL, NULL, 2, 'Product', 'Product', 1, '1.0000', '-12.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '-12.0000', '-12.0000', '2022-01-24', 'received', '1.0000', '1.0000', '-12.0000', NULL, NULL, 1, 'unit', '-12.0000', NULL, NULL, NULL, NULL, NULL),
 (5, NULL, NULL, 4, 'testing', 'testing', NULL, '0.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '0.0000', '99.0000', '2021-08-26', 'received', '0.0000', '0.0000', '100.0000', NULL, NULL, 2, 'Pcs', '100.0000', NULL, NULL, NULL, NULL, NULL),
-(6, NULL, NULL, 5, '49234040', 'With Supplier', NULL, '1.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '100.0000', '96.0000', '2021-09-14', 'received', '1.0000', '1.0000', '100.0000', NULL, NULL, 1, 'unit', '100.0000', NULL, NULL, NULL, NULL, NULL),
-(7, 4, NULL, 5, '49234040', 'With Supplier', NULL, '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', NULL, '2.0000', '1.0000', '2021-09-14', 'received', '2.0000', '2.0000', '1.0000', 'ID001', NULL, 1, 'unit', '1.0000', NULL, NULL, NULL, NULL, '2.0000'),
-(8, 5, NULL, 5, '49234040', 'With Supplier', NULL, '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', NULL, '2.0000', '1.0000', '2021-09-14', 'received', '2.0000', '2.0000', '1.0000', 'ID001', NULL, 1, 'unit', '1.0000', NULL, NULL, NULL, NULL, '2.0000');
+(6, NULL, NULL, 5, '49234040', 'With Supplier', NULL, '1.0000', '100.0000', 1, '0.0000', 1, '0', NULL, NULL, NULL, '100.0000', '96.0000', '2021-09-14', 'received', '1.0000', '1.0000', '100.0000', NULL, NULL, 1, 'unit', '100.0000', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1459,9 +1360,7 @@ CREATE TABLE `sma_sales` (
 --
 
 INSERT INTO `sma_sales` (`id`, `date`, `reference_no`, `customer_id`, `customer`, `biller_id`, `biller`, `warehouse_id`, `note`, `staff_note`, `total`, `product_discount`, `order_discount_id`, `total_discount`, `order_discount`, `product_tax`, `order_tax_id`, `order_tax`, `total_tax`, `shipping`, `grand_total`, `sale_status`, `payment_status`, `payment_term`, `due_date`, `created_by`, `updated_by`, `updated_at`, `total_items`, `pos`, `paid`, `return_id`, `surcharge`, `attachment`, `return_sale_ref`, `sale_id`, `return_sale_total`, `rounding`, `suspend_note`, `api`, `shop`, `address_id`, `reserve_id`, `hash`, `manual_payment`, `cgst`, `sgst`, `igst`, `payment_method`, `room_id`, `customer_contact`, `room_number`) VALUES
-(1, '2021-10-24 05:05:57', 'SALE/POS0013', 1, 'Walk-in Customer', 3, 'Test Biller', 1, '', '', '2.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '2.0000', 'completed', 'paid', 0, NULL, 1, NULL, NULL, 1, 1, '50.0000', NULL, '0.0000', NULL, NULL, NULL, '0.0000', '0.0000', NULL, 0, 0, NULL, NULL, '1d6dbed4615d4ac004f88e7a9d146da1079c6cf407d0550fc334cdab816465e6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, '2021-10-24 05:06:07', 'SALE/POS0014', 1, 'Walk-in Customer', 3, 'Test Biller', 1, '', '', '2.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '2.0000', 'completed', 'paid', 0, NULL, 1, NULL, NULL, 1, 1, '2.0000', NULL, '0.0000', NULL, NULL, NULL, '0.0000', '0.0000', NULL, 0, 0, NULL, NULL, '8cf932ad4cb7bb1c72e0a6b2a0136ad0006df0b5b86e177e22b2ca65293c63ed', NULL, NULL, NULL, NULL, NULL, 975, '0968420939', 'D-01'),
-(3, '2021-10-25 07:34:19', 'SALE/POS0015', 1, 'Walk-in Customer', 3, 'Test Biller', 1, '', '', '14.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '14.0000', 'completed', 'paid', 0, NULL, 1, NULL, NULL, 2, 1, '14.0000', NULL, '0.0000', NULL, NULL, NULL, '0.0000', '0.0000', NULL, 0, 0, NULL, NULL, 'ba2a67defaeb1f9a68c9d0461e690352b7cb1e6fc748925bfa2d05e92087dbbb', NULL, NULL, NULL, NULL, NULL, 975, '0968420939', 'D-01');
+(3, '2022-01-24 10:20:21', 'SALE/POS0020', 1, 'Walk-in Customer', 3, 'Test Biller', 1, '', '', '2.0000', '0.0000', '', '0.0000', '0.0000', '0.0000', 1, '0.0000', '0.0000', '0.0000', '2.0000', 'completed', 'paid', 0, NULL, 1, NULL, NULL, 1, 1, '2.0000', NULL, '0.0000', NULL, NULL, NULL, '0.0000', '0.0000', NULL, 0, 0, NULL, NULL, '5ebe95f5e699a6f95d7ced5b1730f0de5b47db5d6a209e2b1f7dd4199a684f7a', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1505,39 +1404,7 @@ CREATE TABLE `sma_sale_items` (
 --
 
 INSERT INTO `sma_sale_items` (`id`, `sale_id`, `product_id`, `product_code`, `product_name`, `product_type`, `option_id`, `net_unit_price`, `unit_price`, `quantity`, `warehouse_id`, `item_tax`, `tax_rate_id`, `tax`, `discount`, `item_discount`, `subtotal`, `serial_no`, `real_unit_price`, `sale_item_id`, `product_unit_id`, `product_unit_code`, `unit_quantity`, `comment`, `gst`, `cgst`, `sgst`, `igst`) VALUES
-(1, 1, 1, 'test', 'test', 'standard', 0, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(2, 1, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(3, 1, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(4, 1, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(5, 2, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '10.0000', 1, '0.0000', 1, '0', '0', '0.0000', '120.0000', '', '12.0000', NULL, 1, 'unit', '10.0000', NULL, NULL, NULL, NULL, NULL),
-(6, 3, 2, 'Product', 'Product', 'standard', 1, '1.5000', '1.5000', '3.0000', 1, '0.0000', 1, '0', '0', '0.0000', '4.5000', '', '1.5000', NULL, 1, 'unit', '3.0000', '', NULL, NULL, NULL, NULL),
-(7, 4, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(8, 4, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(9, 5, 5, '49234040', 'With Supplier', 'standard', NULL, '4.0000', '4.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '4.0000', '', '4.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(10, 6, 5, '49234040', 'With Supplier', 'standard', NULL, '4.0000', '4.0000', '-1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '-4.0000', '', '4.0000', 9, 1, 'unit', '-1.0000', NULL, NULL, NULL, NULL, NULL),
-(11, 7, 5, '49234040', 'With Supplier', 'standard', NULL, '4.0000', '4.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '4.0000', '', '4.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(23, 8, 1, 'test', 'test', 'standard', NULL, '0.0000', '0.0000', '2.0000', 1, '0.0000', 0, '', '0', '0.0000', '0.0000', '', '0.0000', NULL, 1, 'unit', '2.0000', NULL, NULL, NULL, NULL, NULL),
-(22, 8, 5, '49234040', 'With Supplier', 'standard', NULL, '4.0000', '4.0000', '2.0000', 1, '0.0000', 1, '0', '0', '0.0000', '8.0000', '', '4.0000', NULL, 1, 'unit', '2.0000', NULL, NULL, NULL, NULL, NULL),
-(14, 9, 3, 'test1234', 'test1231', 'combo', NULL, '3.0000', '3.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '3.0000', '', '3.0000', NULL, NULL, NULL, '1.0000', '', NULL, NULL, NULL, NULL),
-(15, 9, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(16, 9, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(17, 9, 3, 'test1234', 'test1231', 'combo', NULL, '3.0000', '3.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '3.0000', '', '3.0000', NULL, NULL, NULL, '1.0000', '', NULL, NULL, NULL, NULL),
-(18, 9, 4, 'testing', 'testing', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 2, 'Pcs', '1.0000', '', NULL, NULL, NULL, NULL),
-(19, 9, 5, '49234040', 'With Supplier', 'standard', NULL, '4.0000', '4.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '4.0000', '', '4.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(20, 9, 1, 'test', 'test', 'standard', NULL, '0.0000', '0.0000', '1.0000', 1, '0.0000', 0, '', '0', '0.0000', '0.0000', '', '0.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(21, 9, 3, 'test1234', 'test1231', 'combo', NULL, '3.0000', '3.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '3.0000', '', '3.0000', NULL, NULL, NULL, '1.0000', '', NULL, NULL, NULL, NULL),
-(24, 10, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', 'Test', NULL, NULL, NULL, NULL),
-(25, 11, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(26, 11, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(27, 12, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(28, 13, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(29, 13, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(30, 14, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(31, 14, 3, 'test1234', 'test1231', 'combo', NULL, '3.0000', '3.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '3.0000', '', '3.0000', NULL, NULL, NULL, '1.0000', '', NULL, NULL, NULL, NULL),
-(32, 1, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(33, 2, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(34, 3, 2, 'Product', 'Product', 'standard', 1, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL),
-(35, 3, 1, 'test', 'test', 'standard', NULL, '12.0000', '12.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '12.0000', '', '12.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL);
+(4, 3, 6, '53300126', 'test', 'standard', NULL, '2.0000', '2.0000', '1.0000', 1, '0.0000', 1, '0', '0', '0.0000', '2.0000', '', '2.0000', NULL, 1, 'unit', '1.0000', '', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1557,7 +1424,7 @@ CREATE TABLE `sma_sessions` (
 --
 
 INSERT INTO `sma_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
-('6qcemvflnicmfko7ei4l3ggovp3ohtr3', '127.0.0.1', 1643017943, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031373639323b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031373934313b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
+('6qcemvflnicmfko7ei4l3ggovp3ohtr3', '127.0.0.1', 1643018294, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031383239343b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031373934313b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
 ('ij8h8hi2nj80k1huua9dlc9474bl4vbq', '127.0.0.1', 1643017692, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031373639323b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031373235343b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
 ('omtokqte6sa11nuh8viasbefjuic1h2h', '127.0.0.1', 1635147262, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633353134373135313b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335303531393531223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633353134373236323b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
 ('65fiumprqmlc6pfuvt88fcgno5bjaq81', '127.0.0.1', 1635051967, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633353035313930393b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393937343231223b6c6173745f69707c733a333a223a3a31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633353035313936373b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b72656d6f76655f706f736c737c693a313b),
@@ -1570,7 +1437,12 @@ INSERT INTO `sma_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('ahvqhf6ek0t2euovtreu7bo95q8cb7rt', '::1', 1634998521, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633343939383532313b7265717565737465645f706167657c733a393a2261646d696e2f706f73223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393630363837223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633343939383339303b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
 ('fbpmmpqhg7f3hro3b5p3n72krsbu15i7', '::1', 1634998880, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633343939383838303b7265717565737465645f706167657c733a393a2261646d696e2f706f73223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393630363837223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633343939383339303b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
 ('3o6f5dns705lb0q38bovnphb3hqgctlt', '::1', 1634998204, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633343939383230343b7265717565737465645f706167657c733a393a2261646d696e2f706f73223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393630363837223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633343939373438303b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
-('7t5tp92dla16t0e3jfej67vhm8gqkc9q', '::1', 1634997777, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633343939373737373b7265717565737465645f706167657c733a393a2261646d696e2f706f73223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393630363837223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633343939373438303b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b);
+('7t5tp92dla16t0e3jfej67vhm8gqkc9q', '::1', 1634997777, 0x5f5f63695f6c6173745f726567656e65726174657c693a313633343939373737373b7265717565737465645f706167657c733a393a2261646d696e2f706f73223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363334393630363837223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313633343939373438303b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
+('q9572l5kovdhor4o51lffducne6dr050', '127.0.0.1', 1643018596, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031383539363b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031383537373b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
+('i5npo0tdqil4br709pc1e88mdg1k36g8', '127.0.0.1', 1643018946, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031383934363b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031383837393b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b),
+('dlqurhu349ubk7v2osnvte4bqa1udugq', '127.0.0.1', 1643019266, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031393236363b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031393232393b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b757365725f637372667c733a32303a2235656331795567446453386e4741364654377657223b72656d6f76655f706f736c737c693a313b),
+('6ansnm1r20thhrck8bkjut7lqecflj0s', '127.0.0.1', 1643019586, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031393538363b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031393530373b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b757365725f637372667c733a32303a2235656331795567446453386e4741364654377657223b),
+('gqm54nb20llrgrbhpd6n0s77tneu00ah', '127.0.0.1', 1643019737, 0x5f5f63695f6c6173745f726567656e65726174657c693a313634333031393538363b7265717565737465645f706167657c733a353a2261646d696e223b6964656e746974797c733a343a2264656d6f223b757365726e616d657c733a343a2264656d6f223b656d61696c7c733a31383a226f776e65724074656364696172792e636f6d223b757365725f69647c733a313a2231223b6f6c645f6c6173745f6c6f67696e7c733a31303a2231363335313437323436223b6c6173745f69707c733a393a223132372e302e302e31223b6176617461727c4e3b67656e6465727c733a343a226d616c65223b67726f75705f69647c733a313a2231223b77617265686f7573655f69647c4e3b766965775f72696768747c733a313a2230223b656469745f72696768747c733a313a2230223b616c6c6f775f646973636f756e747c733a313a2230223b62696c6c65725f69647c4e3b636f6d70616e795f69647c4e3b73686f775f636f73747c733a313a2230223b73686f775f70726963657c733a313a2230223b6c6173745f61637469766974797c693a313634333031393733373b72656769737465725f69647c733a313a2232223b636173685f696e5f68616e647c733a373a2231302e30303030223b72656769737465725f6f70656e5f74696d657c733a31393a22323032312d30382d31392030373a35383a3239223b757365725f637372667c733a32303a2235656331795567446453386e4741364654377657223b);
 
 -- --------------------------------------------------------
 
@@ -2126,16 +1998,11 @@ CREATE TABLE `sma_warehouses_products` (
 --
 
 INSERT INTO `sma_warehouses_products` (`id`, `product_id`, `warehouse_id`, `quantity`, `rack`, `avg_cost`) VALUES
-(1, 1, 1, '92.0000', NULL, '1.6981'),
-(2, 1, 2, '0.0000', NULL, '0.0000'),
-(3, 2, 1, '24.0000', NULL, '1.0000'),
-(4, 2, 2, '0.0000', NULL, '0.0000'),
-(5, 3, 1, '0.0000', NULL, '0.0000'),
-(6, 3, 2, '0.0000', NULL, '0.0000'),
-(7, 4, 1, '99.0000', NULL, '0.0000'),
-(8, 4, 2, '0.0000', NULL, '0.0000'),
-(9, 5, 1, '98.0000', NULL, '1.0202'),
-(10, 5, 2, '0.0000', NULL, '1.0000');
+(15, 6, 2, '0.0000', NULL, '1.0000'),
+(14, 6, 1, '99.0000', NULL, '1.0000'),
+(13, 1, 1, '86.0000', NULL, '0.0000'),
+(12, 4, 1, '99.0000', NULL, '0.0000'),
+(11, 5, 1, '96.0000', NULL, '0.0000');
 
 -- --------------------------------------------------------
 
@@ -2151,14 +2018,6 @@ CREATE TABLE `sma_warehouses_products_variants` (
   `quantity` decimal(15,4) NOT NULL,
   `rack` varchar(55) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `sma_warehouses_products_variants`
---
-
-INSERT INTO `sma_warehouses_products_variants` (`id`, `option_id`, `product_id`, `warehouse_id`, `quantity`, `rack`) VALUES
-(1, 1, 2, 1, '24.0000', NULL),
-(2, 1, 2, 2, '0.0000', NULL);
 
 --
 -- Indexes for dumped tables
@@ -2598,13 +2457,13 @@ ALTER TABLE `sma_addresses`
 -- AUTO_INCREMENT for table `sma_adjustments`
 --
 ALTER TABLE `sma_adjustments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sma_adjustment_items`
 --
 ALTER TABLE `sma_adjustment_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sma_brands`
@@ -2634,7 +2493,7 @@ ALTER TABLE `sma_categories`
 -- AUTO_INCREMENT for table `sma_combo_items`
 --
 ALTER TABLE `sma_combo_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sma_companies`
@@ -2646,7 +2505,7 @@ ALTER TABLE `sma_companies`
 -- AUTO_INCREMENT for table `sma_costing`
 --
 ALTER TABLE `sma_costing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sma_currencies`
@@ -2718,7 +2577,7 @@ ALTER TABLE `sma_login_attempts`
 -- AUTO_INCREMENT for table `sma_logs`
 --
 ALTER TABLE `sma_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `sma_notifications`
@@ -2736,7 +2595,7 @@ ALTER TABLE `sma_order_ref`
 -- AUTO_INCREMENT for table `sma_payments`
 --
 ALTER TABLE `sma_payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sma_permissions`
@@ -2766,7 +2625,7 @@ ALTER TABLE `sma_printers`
 -- AUTO_INCREMENT for table `sma_products`
 --
 ALTER TABLE `sma_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sma_product_photos`
@@ -2802,7 +2661,7 @@ ALTER TABLE `sma_purchases`
 -- AUTO_INCREMENT for table `sma_purchase_items`
 --
 ALTER TABLE `sma_purchase_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sma_quotes`
@@ -2838,7 +2697,7 @@ ALTER TABLE `sma_sales`
 -- AUTO_INCREMENT for table `sma_sale_items`
 --
 ALTER TABLE `sma_sale_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sma_stock_counts`
@@ -2916,7 +2775,7 @@ ALTER TABLE `sma_warehouses`
 -- AUTO_INCREMENT for table `sma_warehouses_products`
 --
 ALTER TABLE `sma_warehouses_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sma_warehouses_products_variants`

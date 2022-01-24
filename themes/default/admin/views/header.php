@@ -399,13 +399,13 @@
                                             <span class="text"> <?= lang('add_product'); ?></span>
                                         </a>
                                     </li>
-                                    <li id="products_import_csv" class = "hide">
+                                    <li id="products_import_csv" class = "">
                                         <a class="submenu" href="<?= admin_url('products/import_csv'); ?>">
                                             <i class="fa fa-file-text"></i>
                                             <span class="text"> <?= lang('import_products'); ?></span>
                                         </a>
                                     </li>
-                                    <li id="products_print_barcodes" class = "hide">
+                                    <li id="products_print_barcodes" class = "">
                                         <a class="submenu" href="<?= admin_url('products/print_barcodes'); ?>">
                                             <i class="fa fa-tags"></i>
                                             <span class="text"> <?= lang('print_barcode_label'); ?></span>
@@ -445,7 +445,7 @@
                                     </span> <span class="chevron closed"></span>
                                 </a>
                                 <ul>
-                                    <li id="sales_index" class = "hide">
+                                    <li id="sales_index" class = "">
                                         <a class="submenu" href="<?= admin_url('sales'); ?>">
                                             <i class="fa fa-heart"></i>
                                             <span class="text"> <?= lang('list_sales'); ?></span>
@@ -710,7 +710,7 @@
                                                 <i class="fa fa-chain"></i><span class="text"> <?= lang('customer_groups'); ?></span>
                                             </a>
                                         </li>
-                                        <li id="system_settings_price_groups" class = "hide">
+                                        <li id="system_settings_price_groups" class = "">
                                             <a href="<?= admin_url('system_settings/price_groups') ?>">
                                                 <i class="fa fa-dollar"></i><span class="text"> <?= lang('price_groups'); ?></span>
                                             </a>
